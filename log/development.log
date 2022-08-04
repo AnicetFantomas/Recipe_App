@@ -3423,3 +3423,23 @@ Processing by RecipeFoodsController#new as HTML
 Completed 200 OK in 127ms (Views: 102.6ms | ActiveRecord: 9.9ms | Allocations: 10606)
 
 
+Started GET "/recipe_foods/new" for 127.0.0.1 at 2022-08-04 21:57:39 +0200
+Processing by RecipeFoodsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/new.html.erb within layouts/application
+  Rendered recipe_foods/_form.html.erb (Duration: 5.1ms | Allocations: 1621)
+  Rendered recipe_foods/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1752)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 16499)
+Completed 200 OK in 58ms (Views: 30.5ms | ActiveRecord: 8.5ms | Allocations: 22825)
+
+
+Started GET "/recipe_foods/new" for 127.0.0.1 at 2022-08-04 22:01:10 +0200
+Processing by RecipeFoodsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/new.html.erb within layouts/application
+  Rendered recipe_foods/_form.html.erb (Duration: 5.4ms | Allocations: 1618)
+  Rendered recipe_foods/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 16604)
+Completed 200 OK in 73ms (Views: 31.2ms | ActiveRecord: 7.9ms | Allocations: 20262)
+
+
