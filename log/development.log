@@ -3060,3 +3060,366 @@ Processing by Devise::SessionsController#create as TURBO_STREAM
 Completed 401 Unauthorized in 192ms (ActiveRecord: 100.3ms | Allocations: 6566)
 
 
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 15:07:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220804125240_create_recipe_foods.rb
+
+
+):
+  
+activerecord (7.0.3.1) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3.1) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:83:in `execute'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:93:in `execute_if_updated'
+activerecord (7.0.3.1) lib/active_record/migration.rb:599:in `block in call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/recipes_food" for 127.0.0.1 at 2022-08-04 15:08:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220804125240_create_recipe_foods.rb
+
+
+):
+  
+activerecord (7.0.3.1) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3.1) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipeFoods (20220804125240)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (148.8ms)[0m  [1m[35mCREATE TABLE "recipe_foods" ("id" bigserial primary key, "quantity" decimal, "recipe_id" bigint NOT NULL, "food_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b279eaba63"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+, CONSTRAINT "fk_rails_cef9648c35"
+FOREIGN KEY ("food_id")
+  REFERENCES "foods" ("id")
+)[0m
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE INDEX "index_recipe_foods_on_recipe_id" ON "recipe_foods" ("recipe_id")[0m
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE INDEX "index_recipe_foods_on_food_id" ON "recipe_foods" ("food_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220804125240"]]
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes_food" for 127.0.0.1 at 2022-08-04 15:08:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/recipes_food"):
+  
+Started GET "/recipes_foods" for 127.0.0.1 at 2022-08-04 15:09:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/recipes_foods"):
+  
+Started GET "/recipe_foods" for 127.0.0.1 at 2022-08-04 15:09:42 +0200
+Processing by RecipeFoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/index.html.erb within layouts/application
+  [1m[36mRecipeFood Load (1.0ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipe_foods/index.html.erb:6
+  Rendered recipe_foods/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1403)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 16474)
+Completed 200 OK in 42ms (Views: 33.7ms | ActiveRecord: 1.0ms | Allocations: 18678)
+
+
+Started GET "/recipe_foods/new" for 127.0.0.1 at 2022-08-04 15:09:47 +0200
+Processing by RecipeFoodsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/new.html.erb within layouts/application
+  Rendered recipe_foods/_form.html.erb (Duration: 6.9ms | Allocations: 1870)
+  Rendered recipe_foods/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2189)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4551)
+Completed 200 OK in 39ms (Views: 17.3ms | ActiveRecord: 8.7ms | Allocations: 7475)
+
+
+Started POST "/recipe_foods" for 127.0.0.1 at 2022-08-04 15:09:56 +0200
+Processing by RecipeFoodsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe_food"=>{"quantity"=>"11", "recipe_id"=>"", "food_id"=>""}, "commit"=>"Create Recipe food"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/new.html.erb within layouts/application
+  Rendered recipe_foods/_form.html.erb (Duration: 6.4ms | Allocations: 2155)
+  Rendered recipe_foods/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2271)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4737)
+Completed 422 Unprocessable Entity in 398ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 8884)
+
+
+Started GET "/recipe_foods" for 127.0.0.1 at 2022-08-04 15:13:14 +0200
+Processing by RecipeFoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/index.html.erb within layouts/application
+  [1m[36mRecipeFood Load (0.7ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipe_foods/index.html.erb:6
+  Rendered recipe_foods/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 3248)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.7ms | Allocations: 3542)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 15:14:40 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"3", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mRecipe Create (2.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tomatoe"], ["preparation_time", 3.0], ["cooking_time", 3.0], ["description", "affasdfsadfasd"], ["public", false], ["user_id", nil], ["created_at", "2022-08-04 13:14:40.687114"], ["updated_at", "2022-08-04 13:14:40.687114"]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (70.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/recipes/5
+Completed 302 Found in 105ms (ActiveRecord: 79.9ms | Allocations: 5284)
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2022-08-04 15:14:40 +0200
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:63:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 4.9ms | Allocations: 295)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1468)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 4216)
+Completed 200 OK in 59ms (Views: 49.2ms | ActiveRecord: 0.8ms | Allocations: 6573)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-08-04 15:14:53 +0200
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (80.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:6
+  Rendered foods/index.html.erb within layouts/application (Duration: 209.9ms | Allocations: 1343)
+  Rendered layout layouts/application.html.erb (Duration: 217.7ms | Allocations: 3907)
+Completed 200 OK in 225ms (Views: 140.9ms | ActiveRecord: 80.8ms | Allocations: 4967)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2022-08-04 15:14:56 +0200
+Processing by FoodsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (Duration: 6.5ms | Allocations: 2428)
+  Rendered foods/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 2746)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 5108)
+Completed 200 OK in 51ms (Views: 29.3ms | ActiveRecord: 5.5ms | Allocations: 8028)
+
+
+Started POST "/foods" for 127.0.0.1 at 2022-08-04 15:15:06 +0200
+Processing by FoodsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "food"=>{"name"=>"Pizza", "measurement_unit"=>"2", "price"=>"3", "quantity"=>"33", "user_id"=>""}, "commit"=>"Create Food"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:27:in `block in create'
+  [1m[36mFood Create (2.2ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "2"], ["price", "3.0"], ["quantity", 33], ["user_id", nil], ["created_at", "2022-08-04 13:15:06.961314"], ["updated_at", "2022-08-04 13:15:06.961314"]]
+  ↳ app/controllers/foods_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (102.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/foods_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/foods/1
+Completed 302 Found in 126ms (ActiveRecord: 105.3ms | Allocations: 2657)
+
+
+Started GET "/foods/1" for 127.0.0.1 at 2022-08-04 15:15:07 +0200
+Processing by FoodsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:63:in `set_food'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/show.html.erb within layouts/application
+  Rendered foods/_food.html.erb (Duration: 46.7ms | Allocations: 261)
+  Rendered foods/show.html.erb within layouts/application (Duration: 87.8ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 3558)
+Completed 200 OK in 107ms (Views: 101.2ms | ActiveRecord: 0.5ms | Allocations: 5080)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (61.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (18.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (410.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "RecipeApp_development"[0m
+  [1m[35m (344.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "RecipeApp_test"[0m
+  [1m[35m (1495.8ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_development" ENCODING = 'unicode'[0m
+  [1m[35m (1299.1ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (162.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (141.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220803144025)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (137.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "confirmation_token" character varying, "confirmed_at" timestamp(6), "confirmation_sent_at" timestamp(6), "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (52.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (53.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803144025"]]
+  [1m[36mTRANSACTION (20.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20220803144427)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "surname" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803144427"]]
+  [1m[36mTRANSACTION (33.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecipes (20220803160737)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (117.7ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" bigserial primary key, "name" character varying, "preparation_time" float, "cooking_time" float, "description" text, "public" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9606fce865"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (64.3ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803160737"]]
+  [1m[36mTRANSACTION (25.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFoods (20220804081037)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (122.0ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "name" character varying, "measurement_unit" character varying, "price" decimal, "quantity" integer, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_541e2e5c7b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (53.5ms)[0m  [1m[35mCREATE INDEX "index_foods_on_user_id" ON "foods" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220804081037"]]
+  [1m[36mTRANSACTION (23.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecipeFoods (20220804125240)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (113.3ms)[0m  [1m[35mCREATE TABLE "recipe_foods" ("id" bigserial primary key, "quantity" decimal, "recipe_id" bigint, "food_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_b279eaba63"
+FOREIGN KEY ("recipe_id")
+  REFERENCES "recipes" ("id")
+, CONSTRAINT "fk_rails_cef9648c35"
+FOREIGN KEY ("food_id")
+  REFERENCES "foods" ("id")
+)[0m
+  [1m[35m (50.8ms)[0m  [1m[35mCREATE INDEX "index_recipe_foods_on_recipe_id" ON "recipe_foods" ("recipe_id")[0m
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE INDEX "index_recipe_foods_on_food_id" ON "recipe_foods" ("food_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220804125240"]]
+  [1m[36mTRANSACTION (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-04 19:20:57.913983"], ["updated_at", "2022-08-04 19:20:57.913983"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-08-04 21:23:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 21:23:23 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 56.9ms | Allocations: 1990)
+  Rendered layout layouts/application.html.erb (Duration: 385.2ms | Allocations: 38686)
+Completed 200 OK in 538ms (Views: 413.1ms | ActiveRecord: 1.1ms | Allocations: 43220)
+
+
+Started GET "/recipe_foods" for 127.0.0.1 at 2022-08-04 21:23:42 +0200
+Processing by RecipeFoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/index.html.erb within layouts/application
+  [1m[36mRecipeFood Load (1.8ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods"[0m
+  ↳ app/views/recipe_foods/index.html.erb:6
+  Rendered recipe_foods/index.html.erb within layouts/application (Duration: 59.3ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 4010)
+Completed 200 OK in 83ms (Views: 67.9ms | ActiveRecord: 1.8ms | Allocations: 6034)
+
+
+Started GET "/recipe_foods/new" for 127.0.0.1 at 2022-08-04 21:24:01 +0200
+Processing by RecipeFoodsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipe_foods/new.html.erb within layouts/application
+  Rendered recipe_foods/_form.html.erb (Duration: 72.3ms | Allocations: 3749)
+  Rendered recipe_foods/new.html.erb within layouts/application (Duration: 92.8ms | Allocations: 4126)
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 6611)
+Completed 200 OK in 127ms (Views: 102.6ms | ActiveRecord: 9.9ms | Allocations: 10606)
+
+
