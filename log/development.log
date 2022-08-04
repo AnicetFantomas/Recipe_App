@@ -2890,3 +2890,173 @@ Processing by RecipesController#index as TURBO_STREAM
 Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 1.4ms | Allocations: 3497)
 
 
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 13:05:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1417)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 16391)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 18223)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 13:05:25 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.8ms | Allocations: 2351)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2668)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5030)
+Completed 200 OK in 27ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 7261)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 13:05:33 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mRecipe Create (1.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tomatoe"], ["preparation_time", 2.0], ["cooking_time", 2.0], ["description", "affasdfsadfasd"], ["public", false], ["user_id", nil], ["created_at", "2022-08-04 11:05:33.235611"], ["updated_at", "2022-08-04 11:05:33.235611"]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (50.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/recipes/2
+Completed 302 Found in 63ms (ActiveRecord: 51.3ms | Allocations: 2635)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2022-08-04 13:05:33 +0200
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:63:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 1.2ms | Allocations: 279)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 53.2ms | Allocations: 6486)
+  Rendered layout layouts/application.html.erb (Duration: 53.7ms | Allocations: 6587)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.9ms | Allocations: 8195)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<ActionView::Base:0x00000000013420>
+
+'.freeze;   if can? :destroy, recipe 
+                              ^^^^^^
+Did you mean?  @recipe):
+     6:   <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+     7:   <%= link_to "Back to recipes", recipes_path %>
+     8: 
+     9:   <% if can? :destroy, recipe %>
+    10:   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    11:   <% end %>
+    12: </div>
+  
+app/views/recipes/show.html.erb:9
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 13:06:26 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 8.3ms | Allocations: 2416)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2772)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 5564)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 6458)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 13:06:33 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"3", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mRecipe Create (0.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tomatoe"], ["preparation_time", 3.0], ["cooking_time", 3.0], ["description", "affasdfsadfasd"], ["public", false], ["user_id", nil], ["created_at", "2022-08-04 11:06:33.829543"], ["updated_at", "2022-08-04 11:06:33.829543"]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (63.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/recipes/3
+Completed 302 Found in 77ms (ActiveRecord: 64.8ms | Allocations: 2537)
+
+
+Started GET "/recipes/3" for 127.0.0.1 at 2022-08-04 13:06:33 +0200
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:63:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 1.2ms | Allocations: 271)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 17.8ms | Allocations: 5752)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5840)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.6ms | Allocations: 6777)
+
+
+  
+ActionView::Template::Error (undefined method `can?' for #<ActionView::Base:0x00000000013858>
+
+'.freeze;   if can? :destroy, @recipe 
+               ^^^^):
+     6:   <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+     7:   <%= link_to "Back to recipes", recipes_path %>
+     8: 
+     9:   <% if can? :destroy, @recipe %>
+    10:   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    11:   <% end %>
+    12: </div>
+  
+app/views/recipes/show.html.erb:9
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 14:20:30 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.8ms | Allocations: 1764)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1872)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4249)
+Completed 200 OK in 18ms (Views: 16.3ms | Allocations: 4534)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 14:20:41 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"3", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"1"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mRecipe Create (1.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tomatoe"], ["preparation_time", 3.0], ["cooking_time", 3.0], ["description", "affasdfsadfasd"], ["public", true], ["user_id", nil], ["created_at", "2022-08-04 12:20:41.789594"], ["updated_at", "2022-08-04 12:20:41.789594"]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (45.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/recipes/4
+Completed 302 Found in 75ms (ActiveRecord: 55.7ms | Allocations: 5343)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2022-08-04 14:20:41 +0200
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:63:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 0.3ms | Allocations: 32)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5113)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5201)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms | Allocations: 6134)
+
+
+  
+ActionView::Template::Error (undefined method `can?' for #<ActionView::Base:0x00000000013c18>
+
+'.freeze;   if can? :destroy, @recipe 
+               ^^^^):
+     6:   <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+     7:   <%= link_to "Back to recipes", recipes_path %>
+     8: 
+     9:   <% if can? :destroy, @recipe %>
+    10:   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    11:   <% end %>
+    12: </div>
+  
+app/views/recipes/show.html.erb:9
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 14:42:29 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (84.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 192ms (ActiveRecord: 100.3ms | Allocations: 6566)
+
+
