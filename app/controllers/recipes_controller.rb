@@ -12,8 +12,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = current_user.recipes.new(recipe_params)
-
+    @recipe = Recipe.new
   end
 
   # GET /recipes/1/edit
@@ -66,6 +65,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
+      params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
     end
 end

@@ -2427,3 +2427,204 @@ FOREIGN KEY ("user_id")
   [1m[36mTRANSACTION (23.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (365.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "RecipeApp_development"[0m
+  [1m[35m (386.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "RecipeApp_test"[0m
+  [1m[35m (1085.8ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_development" ENCODING = 'unicode'[0m
+  [1m[35m (1084.3ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (151.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (161.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220803144025)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (116.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "confirmation_token" character varying, "confirmed_at" timestamp(6), "confirmation_sent_at" timestamp(6), "unconfirmed_email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (108.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (75.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803144025"]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNameToUsers (20220803144427)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "surname" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803144427"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRecipes (20220803160737)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (154.1ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" bigserial primary key, "name" character varying, "preparation_time" float, "cooking_time" float, "description" text, "public" boolean, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_9606fce865"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (63.3ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220803160737"]]
+  [1m[36mTRANSACTION (56.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFoods (20220804081037)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (408.0ms)[0m  [1m[35mCREATE TABLE "foods" ("id" bigserial primary key, "name" character varying, "measurement_unit" character varying, "price" decimal, "quantity" integer, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_541e2e5c7b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (42.6ms)[0m  [1m[35mCREATE INDEX "index_foods_on_user_id" ON "foods" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220804081037"]]
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-08-04 09:44:41.003751"], ["updated_at", "2022-08-04 09:44:41.003751"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:45:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1633)
+
+
+  
+NoMethodError (undefined method `recipes' for nil:NilClass
+
+    @recipe = current_user.recipes.new(recipe_params)
+                          ^^^^^^^^):
+  
+app/controllers/recipes_controller.rb:15:in `new'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:46:06 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 11.0ms | Allocations: 2037)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2168)
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 17008)
+Completed 200 OK in 65ms (Views: 42.4ms | ActiveRecord: 9.5ms | Allocations: 20971)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 11:46:14 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"33", "cooking_time"=>"33", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 7.5ms | Allocations: 2022)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2130)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4484)
+Completed 422 Unprocessable Entity in 23ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 6311)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:46:40 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.2ms | Allocations: 2015)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2146)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 16986)
+Completed 200 OK in 46ms (Views: 30.1ms | ActiveRecord: 3.9ms | Allocations: 20723)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 11:46:50 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"3", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.8ms | Allocations: 2020)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2128)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4489)
+Completed 422 Unprocessable Entity in 19ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 6289)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:46:53 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.8ms | Allocations: 1739)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4213)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 4501)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:46:54 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 6.2ms | Allocations: 1733)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1841)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4205)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 4492)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-04 11:47:28 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 11:47:28 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 58.7ms | Allocations: 1884)
+  Rendered layout layouts/application.html.erb (Duration: 174.6ms | Allocations: 38312)
+Completed 200 OK in 304ms (Views: 226.6ms | ActiveRecord: 1.2ms | Allocations: 42861)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:47:33 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 88.9ms | Allocations: 4744)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 104.9ms | Allocations: 5123)
+  Rendered layout layouts/application.html.erb (Duration: 114.6ms | Allocations: 7608)
+Completed 200 OK in 144ms (Views: 115.9ms | ActiveRecord: 7.4ms | Allocations: 13086)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 11:47:42 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"22", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 6.3ms | Allocations: 2233)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2349)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4818)
+Completed 422 Unprocessable Entity in 58ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 7565)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 11:52:36 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 6.1ms | Allocations: 2033)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2164)
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 16910)
+Completed 200 OK in 64ms (Views: 42.8ms | ActiveRecord: 8.3ms | Allocations: 20628)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 11:52:44 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mRecipe Create (357.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Tomatoe"], ["preparation_time", 2.0], ["cooking_time", 2.0], ["description", "affasdfsadfasd"], ["public", false], ["user_id", nil], ["created_at", "2022-08-04 09:52:44.440774"], ["updated_at", "2022-08-04 09:52:44.440774"]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (192.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/recipes/1
+Completed 302 Found in 566ms (ActiveRecord: 550.0ms | Allocations: 4151)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2022-08-04 11:52:45 +0200
+Processing by RecipesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:63:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 92.2ms | Allocations: 339)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 191.9ms | Allocations: 1732)
+  Rendered layout layouts/application.html.erb (Duration: 198.5ms | Allocations: 4184)
+Completed 200 OK in 210ms (Views: 199.8ms | ActiveRecord: 0.8ms | Allocations: 7138)
+
+
