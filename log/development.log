@@ -822,3 +822,1077 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for 127.0.0.1 at 2022-08-03 18:11:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1416)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 16486)
+Completed 200 OK in 66ms (Views: 38.7ms | ActiveRecord: 1.0ms | Allocations: 18996)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-03 18:12:03 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 29.5ms | Allocations: 3145)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 3480)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 5966)
+Completed 200 OK in 67ms (Views: 39.2ms | ActiveRecord: 10.2ms | Allocations: 10131)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2022-08-03 18:12:33 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3215)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.6ms | Allocations: 3542)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-03 22:35:02 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.2ms | Allocations: 1973)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2085)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4447)
+Completed 200 OK in 16ms (Views: 14.7ms | Allocations: 4740)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-03 22:37:02 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"1", "description"=>"affasdfsadfasd", "public"=>"1", "user_id"=>"Fun"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 9.8ms | Allocations: 2467)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2583)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5060)
+Completed 422 Unprocessable Entity in 304ms (Views: 19.0ms | ActiveRecord: 12.0ms | Allocations: 23281)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-03 22:37:14 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"1", "description"=>"affasdfsadfasd", "public"=>"1", "user_id"=>"Functy"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.4ms | Allocations: 2240)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2348)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4707)
+Completed 422 Unprocessable Entity in 25ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 7948)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2022-08-03 22:37:46 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 833)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3188)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.0ms | Allocations: 3475)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:37:51 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 226)
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 575)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3210)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5779)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 9624)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:37:52 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4127)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:37:59 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4120)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 4677)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:31 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb141229968>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 544)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2857)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5224)
+Completed 200 OK in 351ms (Views: 17.1ms | ActiveRecord: 2.3ms | Allocations: 10838)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:33 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb140560b00>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 465)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2771)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5137)
+Completed 200 OK in 351ms (Views: 16.1ms | ActiveRecord: 1.4ms | Allocations: 9991)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:34 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb14005dce8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 465)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2771)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5131)
+Completed 200 OK in 353ms (Views: 13.4ms | ActiveRecord: 1.3ms | Allocations: 9996)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:35 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb13aa0fa08>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 465)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2771)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5127)
+Completed 200 OK in 368ms (Views: 13.8ms | ActiveRecord: 1.4ms | Allocations: 10003)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:39 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb13a9187a8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 465)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2771)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5138)
+Completed 200 OK in 374ms (Views: 13.8ms | ActiveRecord: 1.4ms | Allocations: 10001)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-03 22:38:55 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fb141238238>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Anicet Murhula", "surname"=>"Anicet", "email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 10.4ms | Allocations: 465)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 40.9ms | Allocations: 2774)
+  Rendered layout layouts/application.html.erb (Duration: 94.0ms | Allocations: 5136)
+Completed 200 OK in 467ms (Views: 103.8ms | ActiveRecord: 1.2ms | Allocations: 10012)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:38:56 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 223)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4457)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 5818)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:39:14 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1760)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4123)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 4766)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:39:51 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3670)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 4295)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:03 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 346ms (ActiveRecord: 0.7ms | Allocations: 1834)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:05 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 312ms (ActiveRecord: 0.6ms | Allocations: 1513)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:06 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 349ms (ActiveRecord: 0.7ms | Allocations: 1515)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:08 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 334ms (ActiveRecord: 0.6ms | Allocations: 1500)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:09 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 324ms (ActiveRecord: 0.7ms | Allocations: 1518)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:14 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 338ms (ActiveRecord: 0.7ms | Allocations: 1537)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:15 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 329ms (ActiveRecord: 0.4ms | Allocations: 1528)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3666)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 4285)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3658)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 4243)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3662)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4289)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3665)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 4272)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:40:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1304)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 3668)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 4272)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:41:22 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 230)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1574)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 16407)
+Completed 200 OK in 55ms (Views: 31.5ms | ActiveRecord: 10.7ms | Allocations: 21183)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:27 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 28)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 165)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 4562)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5695)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:29 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4128)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 4774)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 4133)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 4688)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:30 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4120)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4675)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:31 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4120)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 4656)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-03 22:41:31 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4120)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 4668)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 22:41:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 192)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1308)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3662)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 4283)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-08-03 22:41:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-08-03 22:41:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/" for ::1 at 2022-08-03 22:41:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for ::1 at 2022-08-03 22:41:59 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 144.1ms | Allocations: 37827)
+Completed 200 OK in 177ms (Views: 149.1ms | ActiveRecord: 1.0ms | Allocations: 42826)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-03 22:42:15 +0200
+Started GET "/recipes" for 127.0.0.1 at 2022-08-03 22:42:15 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 3207)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.5ms | Allocations: 3541)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-03 22:42:19 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 18.1ms | Allocations: 5041)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 5417)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 7901)
+Completed 200 OK in 65ms (Views: 35.7ms | ActiveRecord: 7.9ms | Allocations: 13317)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-03 22:42:41 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"1", "description"=>"affasdfsadfasd", "public"=>"1", "user_id"=>"Anicet"}, "commit"=>"Create Recipe"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/recipes_controller.rb:27:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 10.0ms | Allocations: 2468)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2584)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 5049)
+Completed 422 Unprocessable Entity in 59ms (Views: 20.3ms | ActiveRecord: 11.3ms | Allocations: 13786)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-03 23:11:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes" for 127.0.0.1 at 2022-08-03 23:11:24 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 24.1ms | Allocations: 1844)
+  Rendered layout layouts/application.html.erb (Duration: 145.2ms | Allocations: 37914)
+Completed 200 OK in 359ms (Views: 151.5ms | ActiveRecord: 0.8ms | Allocations: 42913)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:11:36 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 10.0ms | Allocations: 853)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 60.0ms | Allocations: 5150)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 7696)
+Completed 200 OK in 223ms (Views: 68.7ms | ActiveRecord: 6.3ms | Allocations: 17001)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:06 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 545ms (ActiveRecord: 1.2ms | Allocations: 4272)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:07 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 373ms (ActiveRecord: 1.0ms | Allocations: 1753)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:08 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 376ms (ActiveRecord: 0.7ms | Allocations: 1518)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:09 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 369ms (ActiveRecord: 0.6ms | Allocations: 1506)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:10 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 359ms (ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:10 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 378ms (ActiveRecord: 0.7ms | Allocations: 1492)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:11 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 356ms (ActiveRecord: 0.4ms | Allocations: 1532)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:14 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 365ms (ActiveRecord: 5.4ms | Allocations: 1512)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:15 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 360ms (ActiveRecord: 0.4ms | Allocations: 1494)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:17 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 370ms (ActiveRecord: 0.4ms | Allocations: 1497)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:17 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 356ms (ActiveRecord: 1.4ms | Allocations: 1513)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-03 23:12:18 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmurhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmurhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 359ms (ActiveRecord: 0.3ms | Allocations: 1518)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-08-04 07:31:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2022-08-04 08:47:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/users" for 127.0.0.1 at 2022-08-04 08:47:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/rails/info/routes?path=/" for 127.0.0.1 at 2022-08-04 08:47:32 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"/"}
+Completed 200 OK in 41ms (Views: 28.9ms | Allocations: 3627)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 08:47:38 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 167.4ms | Allocations: 4312)
+  Rendered layout layouts/application.html.erb (Duration: 356.4ms | Allocations: 7097)
+Completed 200 OK in 363ms (Views: 361.2ms | ActiveRecord: 43.9ms | Allocations: 8006)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 08:47:41 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 53.3ms | Allocations: 2851)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 78.6ms | Allocations: 3186)
+  Rendered layout layouts/application.html.erb (Duration: 89.2ms | Allocations: 5667)
+Completed 200 OK in 116ms (Views: 90.3ms | ActiveRecord: 10.0ms | Allocations: 9784)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 08:47:53 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"1"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 13.4ms | Allocations: 2232)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2348)
+  Rendered layout layouts/application.html.erb (Duration: 258.1ms | Allocations: 4892)
+Completed 422 Unprocessable Entity in 625ms (Views: 259.7ms | ActiveRecord: 0.0ms | Allocations: 7482)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 09:03:34 +0200
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 64.3ms | Allocations: 3927)
+  Rendered layout layouts/application.html.erb (Duration: 119.6ms | Allocations: 6280)
+Completed 200 OK in 122ms (Views: 120.9ms | ActiveRecord: 11.3ms | Allocations: 6571)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-08-04 09:12:30 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-04 09:12:36 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 85.6ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 108.3ms | Allocations: 621)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 245.7ms | Allocations: 3370)
+  Rendered layout layouts/application.html.erb (Duration: 252.6ms | Allocations: 5939)
+Completed 200 OK in 258ms (Views: 255.6ms | Allocations: 7258)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:12:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 205)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 29.1ms | Allocations: 1855)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 4402)
+Completed 200 OK in 57ms (Views: 54.3ms | Allocations: 5507)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:39 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 99ms (ActiveRecord: 19.2ms | Allocations: 4692)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:42 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 6.2ms | Allocations: 1455)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:43 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.7ms | Allocations: 1464)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:43 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.9ms | Allocations: 1446)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:43 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.6ms | Allocations: 1461)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:44 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (ActiveRecord: 7.1ms | Allocations: 1437)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:44 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.4ms | Allocations: 1437)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:44 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.4ms | Allocations: 1452)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:44 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.5ms | Allocations: 1446)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:44 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.5ms | Allocations: 1461)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:45 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.4ms | Allocations: 1464)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:45 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.5ms | Allocations: 1452)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:45 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.5ms | Allocations: 1458)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:46 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.4ms | Allocations: 1446)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-08-04 09:13:46 +0200
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"anicetmuhula20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "anicetmuhula20@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.3ms | Allocations: 1446)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2022-08-04 09:15:28 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 212)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 71.3ms | Allocations: 1431)
+  Rendered layout layouts/application.html.erb (Duration: 79.7ms | Allocations: 3987)
+Completed 200 OK in 88ms (Views: 85.1ms | ActiveRecord: 0.0ms | Allocations: 5211)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-08-04 09:15:36 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1761)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 4128)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 4788)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-04 09:17:01 +0200
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Joel", "surname"=>"Kalema", "email"=>"joelkalema63@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :name, :surname. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f45ca215608>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Joel", "surname"=>"Kalema", "email"=>"joelkalema63@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "joelkalema63@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at", "name", "surname") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["email", "joelkalema63@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-08-04 07:17:01.661299"], ["unconfirmed_email", nil], ["created_at", "2022-08-04 07:17:01.660894"], ["updated_at", "2022-08-04 07:17:01.660894"], ["name", nil], ["surname", nil]]
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 19.6ms | Allocations: 408)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 26.7ms
+Delivered mail 62eb726deaa47_919f3c3c-4f2@anicetfantomas-HP-EliteBook-2540p-SK983UP-ABA.mail (135.2ms)
+Date: Thu, 04 Aug 2022 09:17:01 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: joelkalema63@gmail.com
+Message-ID: <62eb726deaa47_919f3c3c-4f2@anicetfantomas-HP-EliteBook-2540p-SK983UP-ABA.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome joelkalema63@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=RYBWuWVhQ3zjUhGvG86E">Confirm my account</a></p>
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 838ms (ActiveRecord: 18.9ms | Allocations: 29593)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-04 09:17:02 +0200
+Started GET "/recipes" for 127.0.0.1 at 2022-08-04 09:17:02 +0200
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 949)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3417)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.9ms | Allocations: 3774)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:17:09 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 9.6ms | Allocations: 1807)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1919)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 4281)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 4575)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:17:24 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"1", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 10.4ms | Allocations: 2009)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 2117)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 4471)
+Completed 422 Unprocessable Entity in 38ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 5644)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:19:37 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"1", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 10.7ms | Allocations: 7776)
+
+
+  
+NameError (undefined local variable or method `user' for #<RecipesController:0x00000000013e48>
+
+    @recipe.user_id = user.id
+                      ^^^^
+Did you mean?  super):
+  
+app/controllers/recipes_controller.rb:25:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:20:20 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 16.0ms | Allocations: 2036)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 2167)
+  Rendered layout layouts/application.html.erb (Duration: 116.2ms | Allocations: 17007)
+Completed 200 OK in 143ms (Views: 119.6ms | ActiveRecord: 5.5ms | Allocations: 20780)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:20:30 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"1", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1829)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    @recipe.user_id = current_user.id
+                                  ^^^):
+  
+app/controllers/recipes_controller.rb:25:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:23:44 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 7.2ms | Allocations: 2033)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2164)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | Allocations: 17004)
+Completed 200 OK in 79ms (Views: 58.4ms | ActiveRecord: 7.2ms | Allocations: 20777)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:23:58 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"33", "cooking_time"=>"4", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1626)
+
+
+  
+NoMethodError (undefined method `recipes' for nil:NilClass
+
+    @new_recipe = current_user.recipes.new(recipe_params) 
+                              ^^^^^^^^):
+  
+app/controllers/recipes_controller.rb:24:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:24:27 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 9.5ms | Allocations: 2054)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2185)
+  Rendered layout layouts/application.html.erb (Duration: 78.9ms | Allocations: 17039)
+Completed 200 OK in 108ms (Views: 82.1ms | ActiveRecord: 6.9ms | Allocations: 20812)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:24:37 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"1", "cooking_time"=>"3", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 1608)
+
+
+  
+NoMethodError (undefined method `recipe' for nil:NilClass
+
+    @new_recipe = current_user.recipe.new(recipe_params) 
+                              ^^^^^^^):
+  
+app/controllers/recipes_controller.rb:24:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:25:04 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 14.4ms | Allocations: 2036)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 2167)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 17007)
+Completed 200 OK in 90ms (Views: 70.2ms | ActiveRecord: 6.9ms | Allocations: 20780)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:25:15 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1585)
+
+
+  
+NoMethodError (undefined method `recipe' for nil:NilClass
+
+    @recipe = current_user.recipe.new(recipe_params) 
+                          ^^^^^^^):
+  
+app/controllers/recipes_controller.rb:24:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:25:52 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 8.1ms | Allocations: 2018)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2149)
+  Rendered layout layouts/application.html.erb (Duration: 65.6ms | Allocations: 16990)
+Completed 200 OK in 93ms (Views: 69.4ms | ActiveRecord: 8.4ms | Allocations: 20764)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:26:00 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"3", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1615)
+
+
+  
+NoMethodError (undefined method `recipes' for nil:NilClass
+
+    @recipe = current_user.recipes.new(recipe_params) 
+                          ^^^^^^^^):
+  
+app/controllers/recipes_controller.rb:24:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:33:23 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 46.4ms | Allocations: 2048)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 57.6ms | Allocations: 2179)
+  Rendered layout layouts/application.html.erb (Duration: 170.8ms | Allocations: 17025)
+Completed 200 OK in 291ms (Views: 172.9ms | ActiveRecord: 11.2ms | Allocations: 23436)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:33:33 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"2", "cooking_time"=>"2", "description"=>"affasdfsadfasd", "public"=>"0"}, "commit"=>"Create Recipe"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1585)
+
+
+  
+NoMethodError (undefined method `recipes' for nil:NilClass
+
+    @recipe = current_user.recipes.new(recipe_params) 
+                          ^^^^^^^^):
+  
+app/controllers/recipes_controller.rb:24:in `create'
+Started GET "/recipes/new" for 127.0.0.1 at 2022-08-04 09:34:06 +0200
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 12.3ms | Allocations: 2018)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2149)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 16989)
+Completed 200 OK in 71ms (Views: 46.1ms | ActiveRecord: 8.5ms | Allocations: 20790)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:34:13 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"", "cooking_time"=>"2", "description"=>"1", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 7.3ms | Allocations: 2020)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2128)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4482)
+Completed 422 Unprocessable Entity in 24ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 6295)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:34:25 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"1", "cooking_time"=>"2", "description"=>"1", "public"=>"0"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 9.2ms | Allocations: 2001)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2109)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 4463)
+Completed 422 Unprocessable Entity in 26ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 5547)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2022-08-04 09:34:27 +0200
+Processing by RecipesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "recipe"=>{"name"=>"Tomatoe", "preparation_time"=>"1", "cooking_time"=>"2", "description"=>"1", "public"=>"1"}, "commit"=>"Create Recipe"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 5.4ms | Allocations: 2002)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2110)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4464)
+Completed 422 Unprocessable Entity in 21ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 5578)
+
+
