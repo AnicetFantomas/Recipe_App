@@ -3,7 +3,6 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods
   has_many :foods, through: :recipes_foods
   validates :name, presence: true
-  validates :user, presence: true
   validates :preparation_time, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :cooking_time, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :description, presence: true
