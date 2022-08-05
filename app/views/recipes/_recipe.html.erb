@@ -1,32 +1,13 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
-
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
-  </p>
-
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">     
+      <h5 class="card-title "><%= recipe.name %></h5>
+      <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">r<%= recipe.description %></p>
+      </div>
+    </div>
+  </div>
 </div>
