@@ -3443,3 +3443,4 @@ Processing by RecipeFoodsController#new as HTML
 Completed 200 OK in 73ms (Views: 31.2ms | ActiveRecord: 7.9ms | Allocations: 20262)
 
 
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
