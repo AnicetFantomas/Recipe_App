@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
+<section>
+  <h3 class="text-center"><%= @recipe.name %></h3>
+  <p>preparation time: <%= @recipe.preparation_time%></P>
+  <p>cooking time: <%= @recipe.cooking_time%></P>
+  <p>public: <%= @recipe.public%></P>
+  
+</section>
 
 <div>
   <%= link_to "Back to recipes", recipes_path %>
