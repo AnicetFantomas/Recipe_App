@@ -20,13 +20,13 @@ class RecipeFoodsController < ApplicationController
   def edit; end
 
   # POST /recipe_foods or /recipe_foods.json
-  def create
+  def create # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
     @foods = Food.where(user_id: current_user.id)
     @food = Food.find(recipe_food_params['food'])
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new(quantity: recipes_food_params['quantity'].to_i, food: @food, recipe: @recipe)
 
-    respond_to do |format|
+    respond_to do |format| # rubocop:todo Metrics/BlockLength
       if @recipe_food.save
         format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
@@ -35,24 +35,19 @@ class RecipeFoodsController < ApplicationController
         format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
         endclass RecipesFoodsController < ApplicationController
         before_action :set_recipes_food, only: %i[show edit update destroy]
-
-        # GET /recipes_foods or /recipes_foods.json
-        def index
+        def index # rubocop:todo Lint/NestedMethodDefinition
           @recipes_foods = RecipesFood.all
         end
 
-        # GET /recipes_foods/1 or /recipes_foods/1.json
-        def show; end
+        def show; end # rubocop:todo Lint/NestedMethodDefinition
 
-        # GET /recipes_foods/new
-        def new
+        def new # rubocop:todo Lint/NestedMethodDefinition
           @recipes_food = RecipesFood.new
           @recipe = Recipe.find(params[:recipe_id])
           @foods = Food.where(user_id: current_user.id)
         end
 
-        # POST /recipes_foods or /recipes_foods.json
-        def create
+        def create # rubocop:todo Lint/NestedMethodDefinition
           @foods = Food.where(user_id: current_user.id)
           @food = Food.find(recipes_food_params['food'])
           @recipe = Recipe.find(params[:recipe_id])
@@ -69,8 +64,7 @@ class RecipeFoodsController < ApplicationController
           end
         end
 
-        # DELETE /recipes_foods/1 or /recipes_foods/1.json
-        def destroy
+        def destroy # rubocop:todo Lint/NestedMethodDefinition
           @recipes_food.destroy
 
           respond_to do |format|
@@ -80,21 +74,17 @@ class RecipeFoodsController < ApplicationController
         end
 
         private
-
-        # Use callbacks to share common setup or constraints between actions.
-        def set_recipes_food
+        def set_recipes_food # rubocop:todo Lint/NestedMethodDefinition
           @recipes_food = RecipesFood.find(params[:id])
         end
 
-        # Only allow a list of trusted parameters through.
-        def recipes_food_params
+        def recipes_food_params # rubocop:todo Lint/NestedMethodDefinition
           params.require(:recipes_food).permit(:food, :quantity)
         end
       end
     end
   end
 
-  # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
   def update
     respond_to do |format|
       if @recipe_food.update(recipe_food_params)
@@ -107,7 +97,6 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
     @recipe_food.destroy
 
@@ -119,12 +108,10 @@ class RecipeFoodsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
     @recipe_food = RecipeFood.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def recipe_food_params
     params.require(:recipes_food).permit(:quantity, :food)
   end

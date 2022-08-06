@@ -49,7 +49,6 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    user = current_user
     @food.destroy
 
     respond_to do |format|
