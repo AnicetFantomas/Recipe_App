@@ -4,7 +4,33 @@
   <p>preparation time: <%= @recipe.preparation_time%></P>
   <p>cooking time: <%= @recipe.cooking_time%></P>
   <p>public: <%= @recipe.public%></P>
-  
+
+  <div>
+    <%= link_to 'Generate shopping list',  shopping_lists_path, class: "btn btn-primary" %>
+  </div>
+   <div class="add_ing">
+        <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn btn-primary" %>
+    </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= @recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.food.quantity %> <%= recipe_food.food.measurement_unit %> </td>
+          <td><%= recipe_food.food.quantity * recipe_food.food.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </section>
 
 <div>

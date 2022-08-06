@@ -24,4 +24,4 @@ class publicRecipesController < ApplicationController
            p @public_recipes
        end
     end
-   end
+end
