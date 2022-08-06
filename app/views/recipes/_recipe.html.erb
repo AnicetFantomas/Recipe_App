@@ -2,11 +2,9 @@
   <div class="row g-0">
     <div class="col-md-4 p-3">     
       <h5 class="card-title "><%= recipe.name %></h5>
-        <% if can? :destroy, recipe %>
             <div>
               <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
-            </div>
-        <% end %>     
+            </div>  
     </div>
     <div class="col-md-8">
       <div class="card-body">
