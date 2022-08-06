@@ -14541,3 +14541,164 @@ Processing by RecipesController#index as TURBO_STREAM
 Completed 200 OK in 39ms (Views: 24.6ms | ActiveRecord: 6.6ms | Allocations: 7353)
 
 
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "RecipeApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1406158680827100060)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/" for ::1 at 2022-08-06 23:04:30 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered users/index.html.erb (Duration: 717.1ms | Allocations: 84158)
+Completed 500 Internal Server Error in 739ms (ActiveRecord: 0.0ms | Allocations: 87331)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (D:/Microverse/final final/Recipe_App/tmp/cache/assets/sprockets/v4.0.0/9l/9lEjCExFBeN2jq-ltGvrQb_-VszXUfSlFLZT7PTtwgU.cache.31740.3332.338847, D:/Microverse/final final/Recipe_App/tmp/cache/assets/sprockets/v4.0.0/9l/9lEjCExFBeN2jq-ltGvrQb_-VszXUfSlFLZT7PTtwgU.cache)):
+  
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.1.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.1.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.1.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.1.1) lib/sprockets/loader.rb:266:in `store_asset'
+sprockets (4.1.1) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/context.rb:117:in `load'
+sprockets (4.1.1) lib/sprockets/context.rb:145:in `depend_on_asset'
+sprockets (4.1.1) lib/sprockets/context.rb:185:in `link_asset'
+sprockets-rails (3.4.2) lib/sprockets/rails/context.rb:27:in `compute_asset_path'
+actionview (7.0.3.1) lib/action_view/helpers/asset_url_helper.rb:203:in `asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:41:in `sourcemap_asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:34:in `resolved_sourcemap_comment'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:15:in `block in call'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `gsub'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.1.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/" for ::1 at 2022-08-06 23:04:55 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered layouts/_navbar.erb (Duration: 7.7ms | Allocations: 2246)
+  Rendered users/index.html.erb (Duration: 95.0ms | Allocations: 43334)
+Completed 200 OK in 97ms (Views: 96.3ms | ActiveRecord: 0.0ms | Allocations: 43726)
+
+
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:04:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:05:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
+Started GET "/" for ::1 at 2022-08-06 23:05:02 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb
+  Rendered layouts/_navbar.erb (Duration: 6.5ms | Allocations: 1390)
+  Rendered users/index.html.erb (Duration: 18.3ms | Allocations: 5191)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 5514)
+
+
+Started GET "/foods" for ::1 at 2022-08-06 23:05:03 +0300
+Processing by FoodsController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms | Allocations: 2052)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-06 23:05:04 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+Started GET "/recipes" for ::1 at 2022-08-06 23:05:04 +0300
+  Rendered devise/shared/_links.html.erb (Duration: 77.1ms | Allocations: 1968)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 128.7ms | Allocations: 5692)
+  Rendered layouts/_navbar.erb (Duration: 7.0ms | Allocations: 1498)
+  Rendered layout layouts/application.html.erb (Duration: 151.2ms | Allocations: 10298)
+Completed 200 OK in 191ms (Views: 157.5ms | ActiveRecord: 8.9ms | Allocations: 19553)
+
+
+Processing by RecipesController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 619)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-08-06 23:05:04 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 196)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1377)
+  Rendered layouts/_navbar.erb (Duration: 3.4ms | Allocations: 1438)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 5448)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 6297)
+
+
+Started GET "/_next/webpack-hmr" for ::1 at 2022-08-06 23:05:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/_next/webpack-hmr"):
+  
