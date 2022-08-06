@@ -1,4 +1,4 @@
-class publicRecipesController < ApplicationController
+class PublicRecipesController < ApplicationController
     def index
            @recipes = Recipe.includes(:user).where(public: true).where.not(user_id: current_user.id).order(created_at: :desc)
            @public_recipes = []
@@ -15,7 +15,7 @@ class publicRecipesController < ApplicationController
            total_price = food.price * food_items
            public_recipe = {
                id: recipe.id,
-               recipe_name : recipe.name,
+               recipe_name: recipe.name,
                author:,
                food_items:,
                total_price:
