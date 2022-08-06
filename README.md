@@ -13,7 +13,7 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 ### Cloning the project
 
- git clone https://github.com/sentayhu19/Recipe-app <Your-Build-Directory>
+https://github.com/AnicetFantomas/Recipe_App.git
 ``` 
 - cd Recipe-app
 - rails s
