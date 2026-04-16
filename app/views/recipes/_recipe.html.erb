@@ -1,0 +1,15 @@
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">     
+      <h5 class="card-title "><%= recipe.name %></h5>
+            <div>
+              <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
+            </div>  
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">r<%= recipe.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
